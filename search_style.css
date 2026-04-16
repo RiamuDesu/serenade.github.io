@@ -104,18 +104,21 @@ header{
     color: white;
     font-size: 28px;
 }
-.board {
+.board.filterable{
     width: 80%;
     margin: auto;
-    margin-bottom: 10%;
+    margin-bottom: 2%;
     background: #c89a6d;
     border: 10px solid #f3c3d2;
     padding: 60px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 30px;
 }
-.board#search{
+.hidden {
+    display: none !important;
+}
+.board-nonfilter{
     width: 80%;
     margin: auto;
     margin-bottom: 2%;
@@ -206,6 +209,15 @@ select:focus {
 select:active {
   transform: scale(0.98);
 }
+.polaroidrow{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* Aligns images to the left under the title */
+    gap: 30px;
+    width: 100%;
+    overflow-x: auto; /* Adds a scrollbar if there are too many images for the screen */
+    padding-bottom: 10px; /* Space for the scrollbar if it appears */
+}
 .polaroid {
     width: 200px;
     height: 200px;
@@ -213,6 +225,7 @@ select:active {
     padding: 10px;
     transform: rotate(-5deg);
     box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
 }
 .polaroid img {
     width: 100%;

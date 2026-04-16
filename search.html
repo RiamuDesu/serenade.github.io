@@ -9,7 +9,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
     <link href="search_style.css" rel="stylesheet">
-
+    <script src="search.js"></script>
 </head>
 
 <body>
@@ -37,139 +37,146 @@
         </div>
     </header>
 
-    <div class="board" id="search">
-        <div class="search-container">
-            <div class="search-container">
-            <label for="categoryFilter">Filter by Category:</label>
+    <div class="board-nonfilter" id="search">
+    <div class="search-container">
+        <label for="categoryFilter">Filter by Category:</label>
+        <div class="custom-select-wrapper">
             <select id="categoryFilter" onchange="filterByCategory()">
                 <option value="all">Show All</option>
-                <option value="electronics">Electronics</option>
-                <option value="wearables">Wearables</option>
+                <option value="featured">Featured</option>
+                <option value="recommended">Recommended</option>
                 <option value="accessories">Accessories</option>
             </select>
+        </div>
+    </div>
+</div>
+        <br><br>
+    <div class="board filterable" id="featured">
+        <h2>Featured</h2>  
+        <div class="polaroidrow">
+            <div class="polaroid" >
+                <div class="pin"></div>
+
+                <img src="img1.jpg">
+            </div>
+            <div class="polaroid">
+
+                <div class="pin"></div>
+
+                <img src="img2.jpg">
+            </div>
+            <div class="polaroid">
+
+                <div class="pin"></div>
+
+                <img src="img3.jpg">
+            </div>
+            <div class="polaroid">
+
+                <div class="pin"></div>
+
+                <img src="img4.png">
+            </div>
+
+            <div class="polaroid">
+
+                <div class="pin"></div>
+
+                <img src="img4.png">
+            </div>
+
+            <div class="polaroid">
+
+                <div class="pin"></div>
+
+                <img src="img4.png">
+            </div>
+        </div>
+        
+    </div>
+    <div class="board filterable" id="recommended">
+        <h2>Recommended</h2> 
+        <div class="polaroidrow">
+            <div class="polaroid">
+                <div class="pin"></div>
+
+                <img src="img1.jpg">
+            </div>
+            <div class="polaroid">
+
+                <div class="pin"></div>
+
+                <img src="img2.jpg">
+            </div>
+            <div class="polaroid">
+
+                <div class="pin"></div>
+
+                <img src="img3.jpg">
+            </div>
+            <div class="polaroid">
+
+                <div class="pin"></div>
+
+                <img src="img4.png">
+            </div>
+
+            <div class="polaroid">
+
+                <div class="pin"></div>
+
+                <img src="img4.png">
+            </div>
+
+            <div class="polaroid">
+
+                <div class="pin"></div>
+
+                <img src="img4.png">
             </div>
         </div>
     </div>
-        <br><br>
-    <div class="board">
-        <div class="polaroid">
 
-            <div class="pin"></div>
+    <div class="board filterable" id="Your Likes">
+        <h2>Your Likes</h2> 
+        <div class="polaroidrow">
+            <div class="polaroid" >
+                <div class="pin"></div>
 
-            <img src="img1.jpg">
-        </div>
-        <div class="polaroid">
+                <img src="img1.jpg">
+            </div>
+            <div class="polaroid">
 
-            <div class="pin"></div>
+                <div class="pin"></div>
 
-            <img src="img2.jpg">
-        </div>
-        <div class="polaroid">
+                <img src="img2.jpg">
+            </div>
+            <div class="polaroid">
 
-            <div class="pin"></div>
+                <div class="pin"></div>
 
-            <img src="img3.jpg">
-        </div>
-        <div class="polaroid">
+                <img src="img3.jpg">
+            </div>
+            <div class="polaroid">
 
-            <div class="pin"></div>
+                <div class="pin"></div>
 
-            <img src="img4.png">
-        </div>
+                <img src="img4.png">
+            </div>
 
-        <div class="polaroid">
+            <div class="polaroid">
 
-            <div class="pin"></div>
+                <div class="pin"></div>
 
-            <img src="img4.png">
-        </div>
+                <img src="img4.png">
+            </div>
 
-        <div class="polaroid">
+            <div class="polaroid">
 
-            <div class="pin"></div>
+                <div class="pin"></div>
 
-            <img src="img4.png">
-        </div>
-    </div>
-    <div class="board">
-        <div class="polaroid">
-
-            <div class="pin"></div>
-
-            <img src="img1.jpg">
-        </div>
-        <div class="polaroid">
-
-            <div class="pin"></div>
-
-            <img src="img2.jpg">
-        </div>
-        <div class="polaroid">
-
-            <div class="pin"></div>
-
-            <img src="img3.jpg">
-        </div>
-        <div class="polaroid">
-
-            <div class="pin"></div>
-
-            <img src="img4.png">
-        </div>
-
-        <div class="polaroid">
-
-            <div class="pin"></div>
-
-            <img src="img4.png">
-        </div>
-
-        <div class="polaroid">
-
-            <div class="pin"></div>
-
-            <img src="img4.png">
-        </div>
-    </div>
-
-    <div class="board">
-        <div class="polaroid">
-
-            <div class="pin"></div>
-
-            <img src="img1.jpg">
-        </div>
-        <div class="polaroid">
-
-            <div class="pin"></div>
-
-            <img src="img2.jpg">
-        </div>
-        <div class="polaroid">
-
-            <div class="pin"></div>
-
-            <img src="img3.jpg">
-        </div>
-        <div class="polaroid">
-
-            <div class="pin"></div>
-
-            <img src="img4.png">
-        </div>
-
-        <div class="polaroid">
-
-            <div class="pin"></div>
-
-            <img src="img4.png">
-        </div>
-
-        <div class="polaroid">
-
-            <div class="pin"></div>
-
-            <img src="img4.png">
+                <img src="img4.png">
+            </div>
         </div>
     </div>
 
