@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Serenade</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+        <link href="index_style.css" rel="stylesheet">
+        <script src="cookies.js"></script>
+    </head>
+    <body onload="onPageLoad()">
+        
+        <header>
+            <input type="checkbox" id="menu-toggle">
+            
+            <label for="menu-toggle" class="menu-btn">
+                ☰
+            </label>
+            <div class="nav-menu">
+                <label for="menu-toggle" class="close-btn">✕</label>
+                <a href="index.html">Home</a>
+                <a href="create.html">Create Letter</a>
+                <a href="preview.html">Mail</a>
+                <a href="search.html">Search</a>
+            </div>
+            <div class="title">
+                SERENADE
+            </div>
+
+            <div class="login">
+               <button onclick="logoutUser()">Logout</button>
+            </div>
+        </header>
+
+        <div class="welcome">
+            <h1 id="welcometext"></h1>
+        </div>
+
+        <div class="main-card">
+            <img src="heart.png">
+        </div>
+
+        <div class="message-card">
+            Freely and easily convey your feelings
+            to that special someone!
+        </div>
+
+        <a href="create.html">
+            <button class="continue-btn">
+                Create a letter
+            </button>
+        </a>
+        
+    </body>
+</html>

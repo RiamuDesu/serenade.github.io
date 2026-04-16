@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{    
+    margin:0 auto;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(#ff82ad, #ffffff);
+    min-height: 100vh;
+    text-align:center;
+    max-width: 100%;
+}
+header{
+    background: #ff3d81;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 20px;
+    color:white;
+    text-align:left;
+    width: 100%;
+}
+.menu{
+    font-size:26px;
+    background:#f3d7cf;
+    color:#de6b8f;
+    padding:6px 12px;
+    border-radius:8px;
+    border:none;
+}
+.menu:hover{
+    cursor: pointer;
+}
+.menu:active{
+    color:#a14f69;
+    background:#ffcdc0;
+}
+#menu-toggle{
+    display: none;
+}
+.menu-btn{
+    font-size:28px;
+    cursor:pointer;
+    padding:10px;
+    background:#f5d4cc;
+    border-radius:8px;
+}
+.nav-menu{
+    position:fixed;
+    top:0;
+    left:-250px;
+    width:250px;
+    height:100%;
+    background:#e45f82;
+    display:flex;
+    flex-direction:column;
+    padding-top:60px;
+    transition:0.4s;
+}
+.nav-menu a{
+    color:white;
+    text-decoration:none;
+    padding:15px 25px;
+    font-size:18px;
+}
+.nav-menu a:hover{
+    background:#d55375;
+}
+.close-btn{
+    position:absolute;
+    top:15px;
+    left:15px;
+    font-size:22px;
+    cursor:pointer;
+    color:white;
+}
+#menu-toggle:checked ~ .nav-menu{
+    left:0;
+}
+.title{
+    font-family: "Playfair Display", serif;
+    font-size:28px;
+    font-weight: bold;
+    letter-spacing:10px;
+    position: absolute;
+    left: 43%;
+}
+.login button{
+    background:#f3d7cf;
+    color:#de6b8f;
+    padding:8px 2px;
+    border-radius:10px;
+    font-size:14px;
+    position:relative;
+}
+.main-card{
+    margin:40px auto 40px;
+    width:420px;
+    height:300px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}
+.main-card img{
+    border-radius: 50px;
+}
+.subtitle{
+    font-size:12px;
+    margin-top:5px;
+}
+.message-card{
+    margin:auto;
+    width:360px;
+    background:#e45f82;
+    padding:25px;
+    border-radius:25px;
+    color:white;
+    font-size:20px;
+    line-height:1.6;
+}
+.continue-btn{
+    margin-top:30px;
+    background:#e45f82;
+    color:white;
+    border:none;
+    padding:12px 30px;
+    border-radius:25px;
+    font-size:20px;
+    cursor:pointer;
+}
+.continue-btn:hover{
+    background:#d55375;
+}
+.welcome{
+    font-family: "Playfair Display", serif;
+    margin-top: 2%;
+    color: white;
+    font-size: 28px;
+}

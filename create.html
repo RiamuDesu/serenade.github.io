@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create Love Letter</title>
+        <link rel="stylesheet" href="create_style.css">
+    </head>
+    <body>
+
+        <header>
+            <input type="checkbox" id="menu-toggle">
+            
+            <label for="menu-toggle" class="menu-btn">
+                ☰
+            </label>
+
+            <div class="nav-menu">
+                <label for="menu-toggle" class="close-btn">✕</label>
+                <a href="index.html">Home</a>
+                <a href="create.html">Create Letter</a>
+                <a href="preview.html">Mail</a>
+                <a href="search.html">Search</a>
+            </div>
+
+            <div class="title">
+                SERENADE
+            </div>
+
+            <div class="login">
+                <button onclick="logoutUser()">Logout</button>
+            </div>
+        </header>
+
+        <form action="index.html">
+            <div class="center">
+                <h1>WRITE A SERENADE</h1>
+            <img src="letter.png">
+            </div>
+            <div class="inside">
+                <br><br>
+
+            <label>WHO IS THIS FOR?</label>
+            <br>
+            <input type="text" placeholder="@SPOTIFY_USERNAME OR NAME" required>
+
+            <br><br>
+
+            <label>WRITE YOUR MESSAGE (FEEL THE LOVE)</label>
+            <br>
+            <textarea rows="10" placeholder="Write your love letter..." required></textarea>
+
+            <br><br>
+            <input type="text" placeholder="ATTACH SONG (Song Name - Author)" id="song"> <img src="sound.png" id="sound">
+
+            <br><br>
+            </div>
+        
+            <div class="center">
+                <input type="submit" class="btn" value="SEAL AND SEND"> <a href="index.html"></a>
+            </div>
+            
+        </form>
+
+        <section>
+
+            
+
+        </section>
+
+    </body>
+</html>
