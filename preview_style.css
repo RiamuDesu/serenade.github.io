@@ -11,10 +11,11 @@ body {
 header{
     background: #ff3d81;
     display:flex;
-    justify-content:space-between;
     align-items:center;
     padding:10px 20px;
     color:white;
+    text-align:left;
+    width: 100%;
 }
 .menu{
     font-size:26px;
@@ -40,8 +41,6 @@ header{
     padding:10px;
     background:#f5d4cc;
     border-radius:8px;
-    font-size: 26px;
-    color:#de6b8f;
 }
 .nav-menu{
     position:fixed;
@@ -76,20 +75,34 @@ header{
     left:0;
 }
 .title{
-    font-size: 40px;
+    font-family: "Playfair Display", serif;
+    font-size:28px;
+    font-weight: bold;
+    letter-spacing:10px;
+    position: absolute;
+    left: 43%;
+}
+.settings button{
+    background:#f3d7cf;
+    color:#de6b8f;
+    padding:0px 6px;
+    border-radius:10px;
+    font-size:30px;
+    margin-left: 4020%;
+}
+.login button{
+    background:#f3d7cf;
+    color:#de6b8f;
+    padding:8px 2px;
+    border-radius:10px;
+    font-size:20px;
+    margin-left: 2470%;
 }
 .logo {
     font-family: 'Playfair Display', serif;
     font-size: 28px;
     letter-spacing: 3px;
     color: white;
-}
-.login button{
-    background: #ffdbe7;
-    padding: 10px 20px;
-    border-radius: 10px;
-    color: #d6517f;
-    font-weight: 500;
 }
 .main {
     display: flex;

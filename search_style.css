@@ -11,10 +11,11 @@ body {
 header{
     background: #ff3d81;
     display:flex;
-    justify-content:space-between;
     align-items:center;
     padding:10px 20px;
     color:white;
+    text-align:left;
+    width: 100%;
 }
 .menu{
     font-size:26px;
@@ -74,15 +75,28 @@ header{
     left:0;
 }
 .title{
-    font-size:22px;
-    letter-spacing:4px;
+    font-family: "Playfair Display", serif;
+    font-size:28px;
+    font-weight: bold;
+    letter-spacing:10px;
+    position: absolute;
+    left: 43%;
+}
+.settings button{
+    background:#f3d7cf;
+    color:#de6b8f;
+    padding:0px 6px;
+    border-radius:10px;
+    font-size:30px;
+    margin-left: 4020%;
 }
 .login button{
     background:#f3d7cf;
     color:#de6b8f;
-    padding:8px 16px;
+    padding:8px 2px;
     border-radius:10px;
-    font-size:14px;
+    font-size:20px;
+    margin-left: 2470%;
 }
 .title {
     font-family: "Playfair Display", serif;

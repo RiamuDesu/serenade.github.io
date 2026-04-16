@@ -14,7 +14,6 @@ body{
 header{
     background: #ff3d81;
     display:flex;
-    justify-content:space-between;
     align-items:center;
     padding:10px 20px;
     color:white;
@@ -86,13 +85,21 @@ header{
     position: absolute;
     left: 43%;
 }
+.settings button{
+    background:#f3d7cf;
+    color:#de6b8f;
+    padding:0px 6px;
+    border-radius:10px;
+    font-size:30px;
+    margin-left: 4020%;
+}
 .login button{
     background:#f3d7cf;
     color:#de6b8f;
     padding:8px 2px;
     border-radius:10px;
-    font-size:14px;
-    position:relative;
+    font-size:20px;
+    margin-left: 2470%;
 }
 .main-card{
     margin:40px auto 40px;
