@@ -221,3 +221,48 @@ header{
 .polaroid:nth-child(4) {
     transform: rotate(5deg);
 }
+.music-player {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+}
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+#progress-bar {
+    flex-grow: 1;
+    cursor: pointer;
+    accent-color: #ff3d81;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.main-btn {
+    background: #ff3d81;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.skip-btn {
+    background: #cecece;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.main-btn:hover {
+    transform: scale(1.05); 
+}

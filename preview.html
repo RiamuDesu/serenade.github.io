@@ -11,9 +11,9 @@
 
     <link href="preview_style.css" rel="stylesheet">
     <script src="cookies.js"></script>
+    
 
 </head>
-
 <body>
 
     <header>
@@ -45,9 +45,7 @@
 
 
     <div class="main">
-
         <div class="card">
-
             <h2>
                 OPEN YOUR SERENADE
             </h2>
@@ -57,83 +55,96 @@
 
             </div>
 
-
             <div class="song-title">
-                Love For You ♡
+                All of Me - John Legend
             </div>
 
 
-            <div class="progress"></div>
+            <audio id="audio-element" src="John Legend - All of Me.mp3"></audio>
 
-
-            <div class="player">
-                ⏮ ▶ ⏭
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <input type="range" id="progress-bar" value="0" max="100">
+                <span id="duration">0:00</span>
             </div>
 
-
-            <div class="letter">
-
-                My Love,
-                <br><br>
-                I don’t think I say this enough, but you mean so much to me. In a world that often feels busy and overwhelming, you are the one who makes everything feel calm and right. Just thinking about you brings me comfort and a quiet kind of happiness I can’t really explain.
-                <br><br>
-                I love the little things about you—the way you smile, the way you talk about the things you care about, and even the small moments we share that others might not notice. Those are the moments I treasure the most.
-                <br><br>
-                Being with you has taught me what it truly means to care for someone, to be patient, and to appreciate love in its simplest form. I’m grateful for you every single day, and I hope I can make you feel just as loved as you make me feel.
-                <br><br>
-                No matter what happens, I want you to know that you have someone who believes in you, supports you, and cares for you deeply.
-
+            <div class="controls">
+                <button class="skip-btn" onclick="skipTime(-10)">-10s</button>
+                <button id="play-btn" class="main-btn" onclick="togglePlay()">Play</button>
+                <button class="skip-btn" onclick="skipTime(10)">+10s</button>
             </div>
 
+            <br><br>
+            <iframe 
+                id="letterFrame"
+                title="Love Letter"
+                style="width: 100%; max-width: 600px; height: 400px; border: 2px solid #f3c3d2; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
+                srcdoc='
+                    <html>
+                        <head>
+                            <style>
+                                body {
+                                    font-family: "Georgia", serif;
+                                    line-height: 1.5;
+                                    color: #4a4a4a;
+                                    background-color: #fffafb;
+                                    padding: 30px;
+                                    margin: 0;
+                                    font-size:20px;
+                                }
+                                .letter-content {
+                                    white-space: pre-line;
+                                }
+                                h2 {
+                                    color: #d63384; font-size: 1.5rem; margin-top: 0; 
+                                }
+                            </style>
+                        </head>
+                        <body>
+                            <div class="letter-content">
+                                <h2>My Love,</h2>
+                                I don’t think I say this enough, but you mean so much to me. In a world that often feels busy and overwhelming, you are the one who makes everything feel calm and right. Just thinking about you brings me comfort and a quiet kind of happiness I can’t really explain.
+
+                                I love the little things about you—the way you smile, the way you talk about the things you care about, and even the small moments we share that others might not notice. Those are the moments I treasure the most.
+
+                                Being with you has taught me what it truly means to care for someone, to be patient, and to appreciate love in its simplest form. I’m grateful for you every single day, and I hope I can make you feel just as loved as you make me feel.
+
+                                No matter what happens, I want you to know that you have someone who believes in you, supports you, and cares for you deeply.
+                            </div>
+                        </body>
+                    </html>
+                '>
+            </iframe>
         </div>
-
     </div>
 
 
     <div class="gallery-title">
-
         <span>
             GALLERY OF HEARTS
         </span>
-
     </div>
 
 
     <div class="board">
-
         <div class="polaroid">
-
             <div class="pin"></div>
-
             <img src="img1.jpg">
         </div>
-
-
         <div class="polaroid">
 
             <div class="pin"></div>
-
             <img src="img2.jpg">
         </div>
-
-
         <div class="polaroid">
-
             <div class="pin"></div>
-
             <img src="img3.jpg">
         </div>
-
-
         <div class="polaroid">
-
             <div class="pin"></div>
-
             <img src="img4.png">
         </div>
-
     </div>
-
+    <script src="musicplayer.js"></script>
 </body>
-
 </html>
