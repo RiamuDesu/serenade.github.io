@@ -195,6 +195,7 @@ header{
     padding: 10px;
     transform: rotate(-5deg);
     box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    cursor:pointer;
 }
 .polaroid img {
     width: 100%;
@@ -265,4 +266,12 @@ header{
 }
 .main-btn:hover {
     transform: scale(1.05); 
+}
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
