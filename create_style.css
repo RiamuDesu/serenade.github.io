@@ -1,155 +1,155 @@
-body{
+body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(#ff82ad, #ffffff);
-    margin:0;
+    margin: 0;
+    min-height: 100vh;
 }
-header{
+
+header {
     background: #ff3d81;
-    display:flex;
-    align-items:center;
-    padding:10px 20px;
-    color:white;
-    text-align:left;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    position: relative;
     width: 100%;
+    box-sizing: border-box;
 }
-.menu{
-    font-size:26px;
-    background:#f3d7cf;
-    color:#de6b8f;
-    padding:6px 12px;
-    border-radius:8px;
-    border:none;
-}
-.menu:hover{
+
+/* --- Navigation --- */
+#menu-toggle { display: none; }
+
+.menu-btn {
+    font-size: 28px;
     cursor: pointer;
+    padding: 10px;
+    background: #f5d4cc;
+    border-radius: 8px;
+    color: #de6b8f;
 }
-.menu:active{
-    color:#a14f69;
-    background:#ffcdc0;
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #e45f82;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    transition: 0.4s;
+    z-index: 1000;
 }
-#menu-toggle{
-    display: none;
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-size: 18px;
 }
-.menu-btn{
-    font-size:28px;
-    cursor:pointer;
-    padding:10px;
-    background:#f5d4cc;
-    border-radius:8px;
-}
-.nav-menu{
-    position:fixed;
-    top:0;
-    left:-250px;
-    width:250px;
-    height:100%;
-    background:#e45f82;
-    display:flex;
-    flex-direction:column;
-    padding-top:60px;
-    transition:0.4s;
-}
-.nav-menu a{
-    color:white;
-    text-decoration:none;
-    padding:15px 25px;
-    font-size:18px;
-}
-.nav-menu a:hover{
-    background:#d55375;
-}
-.close-btn{
-    position:absolute;
-    top:15px;
-    left:15px;
-    font-size:22px;
-    cursor:pointer;
-    color:white;
-}
-#menu-toggle:checked ~ .nav-menu{
-    left:0;
-}
-.title{
-    font-family: "Playfair Display", serif;
-    font-size:28px;
-    font-weight: bold;
-    letter-spacing:10px;
+
+.nav-menu a:hover { background: #d55375; }
+
+.close-btn {
     position: absolute;
-    left: 43%;
+    top: 15px;
+    left: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
 }
-.settings button{
-    background:#f3d7cf;
-    color:#de6b8f;
-    padding:0px 6px;
-    border-radius:10px;
-    font-size:30px;
-    margin-left: 4020%;
+
+#menu-toggle:checked ~ .nav-menu { left: 0; }
+
+.title {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.login button{
-    background:#f3d7cf;
-    color:#de6b8f;
-    padding:8px 2px;
-    border-radius:10px;
-    font-size:20px;
-    margin-left: 2470%;
+
+/* --- Header Buttons --- */
+.settings { margin-left: auto; }
+
+.settings button, .login button {
+    background: #f3d7cf;
+    color: #de6b8f;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
 }
-form{
+
+.settings button { font-size: 30px; padding: 0 10px; }
+.login button { font-size: 16px; padding: 8px 15px; font-weight: bold; }
+
+/* --- Form Styles --- */
+form {
     background-color: #fff;
-    margin-top: 5%;
+    margin: 5% auto;
     border-radius: 30px;
     width: 50%;
-    margin-left: 25%;
-    padding:10px;
+    padding: 30px 10px;
     text-align: left;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
-form .inside{
-    margin-left:25% ;
+
+form .inside { margin-left: 15%; }
+
+textarea, input[type="text"] {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ffb6c1;
+    font-family: inherit;
 }
-section{
-    padding:40px;
+
+/* --- Public Serenade Option --- */
+.public-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #fff0f5;
+    padding: 15px;
+    border-radius: 15px;
+    width: 80%;
+    margin: 20px 0;
+    border: 2px dashed #ff82ad;
 }
-.hero{
-    margin-top:50px;
+
+.public-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #ff3d81;
+    cursor: pointer;
+    margin-top: 2px;
 }
-.btn{
-    display:inline-block;
-    padding:10px 20px;
-    background:rgb(233, 233, 233);
-    outline-color: rgb(134, 134, 134);
-    color:black;
+
+.public-option label { font-size: 14px; color: #333; cursor: pointer; }
+.public-option span { display: block; font-size: 11px; color: #de6b8f; margin-top: 4px; }
+
+/* --- Buttons --- */
+.center { text-align: center; }
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #ff3d81;
+    color: white;
     font-weight: bold;
-    text-decoration:none;
-    border-radius:50px;
-    width: 40%; 
-}
-.song{
-    margin:20px;
-    background:white;
-    padding:20px;
-    border-radius:10px;
-}
-textarea,input{
-    width:60%;
-    padding:10px;
-    margin:10px;
-    border-radius:6px;
-    border:1px solid #ccc;
-}
-#song{
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
     width: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
-#sound{
-    position:absolute;
-    margin-top: .6%;
-    width: 70px;
-}
-.center{
-    text-align: center;
-}
-.letter{
-    background:white;
-    margin:auto;
-    width:60%;
-    padding:30px;
-    border-radius:10px;
-}
+
+.btn:hover { background: #de2a6b; transform: scale(1.05); }

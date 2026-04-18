@@ -8,10 +8,7 @@
 
         <header>
             <input type="checkbox" id="menu-toggle">
-            
-            <label for="menu-toggle" class="menu-btn">
-                ☰
-            </label>
+            <label for="menu-toggle" class="menu-btn">☰</label>
 
             <div class="nav-menu">
                 <label for="menu-toggle" class="close-btn">✕</label>
@@ -21,9 +18,7 @@
                 <a href="search.html">Search</a>
             </div>
 
-            <div class="title">
-                SERENADE
-            </div>
+            <div class="title">SERENADE</div>
 
             <div class="settings">
                 <a href="settings.html"><button>⚙</button></a>
@@ -34,41 +29,92 @@
             </div>
         </header>
 
-        <form action="index.html">
+        <form id="love-letter-form">
             <div class="center">
                 <h1>WRITE A SERENADE</h1>
-            <img src="letter.png">
+                <img src="letter.png" alt="Letter Icon" style="width: 80px;"> 
             </div>
+            
             <div class="inside">
+                <br>
+                <label>WHO IS THIS FOR?</label>
+                <br>
+                <input type="text" id="target-user" placeholder="@SPOTIFY_USERNAME OR NAME" required>
+
                 <br><br>
 
-            <label>WHO IS THIS FOR?</label>
-            <br>
-            <input type="text" placeholder="@SPOTIFY_USERNAME OR NAME" required>
+                <label>WRITE YOUR MESSAGE (FEEL THE LOVE)</label>
+                <br>
+                <textarea id="message-text" rows="10" placeholder="Write your love letter..." required></textarea>
 
-            <br><br>
+                <br><br>
+                
+                <label>ADD A SOUNDTRACK (YOUTUBE LINK)</label>
+                <br>
+                <div class="song-input-container">
+                    <input type="text" placeholder="Paste YouTube link here (e.g., https://youtu.be/...)" id="yt-link"> 
+                </div>
 
-            <label>WRITE YOUR MESSAGE (FEEL THE LOVE)</label>
-            <br>
-            <textarea rows="10" placeholder="Write your love letter..." required></textarea>
-
-            <br><br>
-            <input type="text" placeholder="ATTACH SONG (Song Name - Author)" id="song"> <img src="sound.png" id="sound">
-
-            <br><br>
+                <div class="public-option">
+                    <input type="checkbox" id="is-public" name="is-public">
+                    <label for="is-public">
+                        <strong>Post to Public Serenade feed?</strong>
+                        <span>Everyone can read your letter, but you remain anonymous.</span>
+                    </label>
+                </div>
+                
+                <br>
             </div>
         
             <div class="center">
-                <input type="submit" class="btn" value="SEAL AND SEND"> <a href="index.html"></a>
+                <input type="submit" class="btn" value="SEAL AND SEND">
             </div>
-            
         </form>
 
-        <section>
+        <script src="auth.js"></script>
 
-            
+        <script>
+            // Pag-open ng page, i-check kung naka-login
+            window.onload = function() {
+                onPageLoad(); 
+            };
 
-        </section>
+            // --- YOUTUBE LINK EXTRACTOR ---
+            function getYTVideoId(url) {
+                const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+                const match = url.match(regExp);
+                return (match && match[2].length === 11) ? match[2] : null;
+            }
+
+            // --- PAG PININDOT ANG 'SEAL AND SEND' ---
+            document.getElementById('love-letter-form').addEventListener('submit', function(e) {
+                e.preventDefault(); // Pigilan muna mag-refresh ang page
+                
+                const ytInput = document.getElementById('yt-link').value;
+                const videoId = getYTVideoId(ytInput);
+
+                // Pag may tinype pero hindi saktong YouTube link
+                if (ytInput && !videoId) {
+                    alert("Beh, parang hindi valid yung YouTube link mo. Paki-check nga ulit!");
+                    return;
+                }
+
+                // I-save ang YouTube ID sa browser memory kung meron
+                if (videoId) {
+                    localStorage.setItem('serenade_yt_id', videoId);
+                } else {
+                    localStorage.removeItem('serenade_yt_id'); // Burahin ang luma kung blanko
+                }
+
+                // Kunin yung message at isave rin (para makita sa preview page)
+                localStorage.setItem('serenade_message', document.getElementById('message-text').value);
+                localStorage.setItem('serenade_target', document.getElementById('target-user').value);
+                
+                alert("Letter Sealed! Sent with love.");
+                // Palitan mo 'to kung saang page mo gusto i-redirect pagtapos (e.g. preview.html)
+                window.location.href = "preview.html"; 
+            });
+        </script>
 
     </body>
 </html>
