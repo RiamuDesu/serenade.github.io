@@ -56,6 +56,24 @@ const memories = {
         audio: "music/Blue - Yung Kai.mp3",
         image: "img2.jpg",
         letter: "<h2>My Love,</h2><br><br>They say home is a place, but for me, it’s always been you. No matter where we are or what we’re doing, there is a quiet peace that settles over me the moment you’re near.<br><br>I love the way your laughter can turn my entire day around and how just a look from you makes me feel completely understood. Thank you for being my teammate, my comfort, and my greatest adventure.<br><br>You are, and will always be, the best part of my day.<br><br>Forever yours."
+    },
+    2: {
+        title: "Lover - Taylor Swift",
+        audio: "music/Blue - Yung Kai.mp3",
+        image: "img2.jpg",
+        letter: "<h2>My Love,</h2><br><br>They say home is a place, but for me, it’s always been you. No matter where we are or what we’re doing, there is a quiet peace that settles over me the moment you’re near.<br><br>I love the way your laughter can turn my entire day around and how just a look from you makes me feel completely understood. Thank you for being my teammate, my comfort, and my greatest adventure.<br><br>You are, and will always be, the best part of my day.<br><br>Forever yours."
+    },
+    3: {
+        title: "Blue - Yung Kai",
+        audio: "music/Blue - Yung Kai.mp3",
+        image: "img2.jpg",
+        letter: "<h2>My Love,</h2><br><br>They say home is a place, but for me, it’s always been you. No matter where we are or what we’re doing, there is a quiet peace that settles over me the moment you’re near.<br><br>I love the way your laughter can turn my entire day around and how just a look from you makes me feel completely understood. Thank you for being my teammate, my comfort, and my greatest adventure.<br><br>You are, and will always be, the best part of my day.<br><br>Forever yours."
+    },
+    4: {
+        title: "Blue - Yung Kai",
+        audio: "music/Blue - Yung Kai.mp3",
+        image: "img2.jpg",
+        letter: "<h2>My Love,</h2><br><br>They say home is a place, but for me, it’s always been you. No matter where we are or what we’re doing, there is a quiet peace that settles over me the moment you’re near.<br><br>I love the way your laughter can turn my entire day around and how just a look from you makes me feel completely understood. Thank you for being my teammate, my comfort, and my greatest adventure.<br><br>You are, and will always be, the best part of my day.<br><br>Forever yours."
     }
 };
 function loadMemory(id) {
