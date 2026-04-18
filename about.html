@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Serenade Team</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    
+    <style>
+        :root {
+            --body-gradient: linear-gradient(#ff82ad, #ffffff);
+            --header-pink: #ff3d81;
+            --soft-pink-bg: #fff0f5; 
+            --main-text-pink: #de6b8f;
+            --heading-pink: #a14f69;
+            --border-dashed-pink: #ff82ad;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--body-gradient);
+            min-height: 100vh;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+
+        /* --- NEW NAV BAR CSS --- */
+        header {
+            background: #ff3d81;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+            width: 100%;
+            position: relative; /* Para sa absolutely positioned title */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-btn {
+            font-size: 28px;
+            cursor: pointer;
+            padding: 4px 12px;
+            background: #f5d4cc;
+            color: #de6b8f;
+            border-radius: 8px;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #e45f82;
+            display: flex;
+            flex-direction: column;
+            padding-top: 60px;
+            transition: 0.4s;
+            z-index: 999; /* Ensures it overlaps the page content */
+            text-align: left;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-menu a:hover {
+            background: #d55375;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 22px;
+            cursor: pointer;
+            color: white;
+            line-height: 1;
+        }
+
+        #menu-toggle:checked ~ .nav-menu {
+            left: 0;
+        }
+
+        .title {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 10px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); /* Centered nicely */
+            color: white;
+            white-space: nowrap;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            margin-left: auto; /* Pushes the buttons to the right edge */
+            align-items: center;
+        }
+
+        .settings button {
+            background: #f3d7cf;
+            color: #de6b8f;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login button {
+            background: #f3d7cf;
+            color: #de6b8f;
+            padding: 8px 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Responsive title for smaller screens */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 18px;
+                letter-spacing: 5px;
+            }
+            .login button {
+                padding: 6px 10px;
+                font-size: 14px;
+            }
+        }
+
+        /* --- ORG CHART SECTION --- */
+        .org-chart-section {
+            padding: 4rem 10%;
+            text-align: center;
+        }
+
+        .org-chart-section h2 {
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .org-chart-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            border: 3px dashed var(--border-dashed-pink); 
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .org-chart-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* --- TEAM SECTION (PURE CSS GRID: 3x2) --- */
+        .team-section {
+            padding: 2rem 10% 6rem;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-header h2 {
+            font-size: 2.8rem;
+            color: var(--heading-pink);
+        }
+
+        .about-header p {
+            color: var(--main-text-pink);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* 3x2 GRID */
+        .team-grid-3x2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 2rem; 
+            max-width: 1200px; 
+            margin: 0 auto;
+        }
+
+        @media (max-width: 991px) {
+            .team-grid-3x2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .team-grid-3x2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* TEAM CARD STYLING */
+        .team-card {
+            position: relative; 
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid rgba(255, 130, 173, 0.2);
+            box-shadow: 0 8px 20px rgba(222, 107, 143, 0.15);
+            padding: 2.5rem 1.5rem;
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; 
+            cursor: pointer; 
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(255, 61, 129, 0.25);
+            border-color: var(--header-pink);
+        }
+
+        .card-link-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; 
+        }
+
+        .team-card img.member-pic {
+            width: 100%;
+            max-width: 120px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 1.2rem auto;
+            background-color: var(--soft-pink-bg); 
+            display: block;
+            border: 5px solid var(--soft-pink-bg);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .team-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #222;
+            font-weight: 700;
+        }
+
+        .team-card .role {
+            font-weight: bold;
+            color: var(--header-pink);
+            margin-bottom: 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background-color: var(--soft-pink-bg);
+            padding: 5px 12px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .team-card .member-desc {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 1.5rem;
+            flex-grow: 1; 
+        }
+
+        .contact-info {
+            border-top: 1px solid #eee;
+            padding-top: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            position: relative; 
+            z-index: 2; 
+        }
+
+        .contact-info i { color: var(--main-text-pink); }
+        .contact-info a {
+            color: #555;
+            font-size: 0.8rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .contact-info:hover a, .contact-info:hover i {
+            color: var(--header-pink);
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <header>
+        <input type="checkbox" id="menu-toggle">
+        
+        <label for="menu-toggle" class="menu-btn">
+            ☰
+        </label>
+        
+        <div class="nav-menu">
+            <label for="menu-toggle" class="close-btn">✕</label>
+            <a href="index.html">Home</a>
+            <a href="create.html">Create Letter</a>
+            <a href="preview.html">Mail</a>
+            <a href="search.html">Search</a>
+            <a href="about.html">About Us</a> 
+        </div>
+        
+        <div class="title">
+            SERENADE
+        </div>
+        
+        <div class="header-actions">
+            <div class="settings">
+                <a href="settings.html"><button>⚙</button></a>
+            </div>
+            <div class="login">
+                <button onclick="logoutUser()">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="org-chart-section">
+            <div class="container">
+                <h2>Our Organization Chart</h2>
+                <div class="org-chart-container">
+                    <p class="text-muted mb-3"><i>Structure behind the melody</i></p>
+                    <img src="org-chart.jpg" alt="Organizational Chart" style="background: #fff0f5; min-height: 350px;">
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <div class="about-header">
+                    <h2>Meet The Team</h2>
+                    <p>PROJECT TEAM</p>
+                </div>
+
+                <div class="team-grid-3x2">
+                    
+                    <div class="team-card">
+                        <a href="link-to-eira-profile.html" class="card-link-overlay" aria-label="View Profile of Rivera, Eira Ayessa"></a>
+                        <img src="rivera.jpg" class="member-pic" alt="Rivera, Eira Ayessa T." />
+                        <h3>Rivera, Eira Ayessa T.</h3>
+                        <div class="role">Project Manager</div>
+                        <p class="member-desc">
+                            As the Project Manager, she oversees the overall development of the Serenade platform from planning to implementation. She ensures that all tasks are aligned with the project objectives and manages the team’s workflow and progress. She is also responsible for coordinating with team members, monitoring deadlines, and ensuring that the final output meets the desired quality and concept of the system.
+                        </p>
+                        <div class="contact-info">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:rivera.eiraayessa@ue.edu.ph">rivera.eiraayessa@ue.edu.ph</a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <a href="link-to-jim-profile.html" class="card-link-overlay" aria-label="View Profile of Flojo, Jim Liam"></a>
+                        <img src="flojo.jpg" class="member-pic" alt="Flojo, Jim Liam L." />
+                        <h3>Flojo, Jim Liam L.</h3>
+                        <div class="role">Developer</div>
+                        <p class="member-desc">
+                            He is responsible for developing the core functionalities of the website. He handles the coding and implementation of features such as anonymous posting, music integration, and nickname-based search. He ensures that the system is functional, responsive, and operates smoothly across different devices.
+                        </p>
+                        <div class="contact-info">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:flojo.jimliam@ue.edu.ph">flojo.jimliam@ue.edu.ph</a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <a href="link-to-mckenzie-profile.html" class="card-link-overlay" aria-label="View Profile of Lugtu, Mckenzie Gabriel"></a>
+                        <img src="lugtu.jpg" class="member-pic" alt="Lugtu, Mckenzie Gabriel L." />
+                        <h3>Lugtu, Mckenzie Gabriel L.</h3>
+                        <div class="role">Developer</div>
+                        <p class="member-desc">
+                            He assists in the development of the website by implementing additional features and supporting the overall system functionality. He works closely with the main developer to ensure that all components are properly integrated and that the website performs efficiently.
+                        </p>
+                        <div class="contact-info">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:lugtu.mckenziegabriel@ue.edu.ph">lugtu.mckenziegabriel@ue.edu.ph</a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <a href="link-to-hannah-profile.html" class="card-link-overlay" aria-label="View Profile of Gallardo, Hannah-Bianca"></a>
+                        <img src="gallardo.jpg" class="member-pic" alt="Gallardo, Hannah-Bianca G." />
+                        <h3>Gallardo, Hannah-Bianca G.</h3>
+                        <div class="role">Designer (UI/UX)</div>
+                        <p class="member-desc">
+                            She is responsible for designing the visual layout and user interface of the Serenade platform. She creates wireframes and ensures that the design is aesthetically pleasing, user-friendly, and aligned with the theme of emotional expression. She focuses on enhancing user experience through intuitive and engaging design elements.
+                        </p>
+                        <div class="contact-info">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:gallardo.hannahbianca@ue.edu.ph">gallardo.hannahbianca@ue.edu.ph</a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <a href="link-to-calvin-profile.html" class="card-link-overlay" aria-label="View Profile of Evangelista, Calvin Lee"></a>
+                        <img src="evangalista.jpg" class="member-pic" alt="Evangelista, Calvin Lee D." />
+                        <h3>Evangelista, Calvin Lee D.</h3>
+                        <div class="role">Tester</div>
+                        <p class="member-desc">
+                            He is responsible for testing the system to identify bugs, errors, and usability issues. He ensures that all features function correctly and that the website provides a smooth and seamless user experience.
+                        </p>
+                        <div class="contact-info">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:evangelista.calvinlee@ue.edu.ph">evangelista.calvinlee@ue.edu.ph</a>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1" class="card-link-overlay" aria-label="View Profile of Ignacio, John Richmond"></a>
+                        <img src="ignacio.jpg" class="member-pic" alt="Ignacio, John Richmond G." />
+                        <h3>Ignacio, John Richmond G.</h3>
+                        <div class="role">Tester</div>
+                        <p class="member-desc">
+                            He assists in conducting system testing and quality assurance. He evaluates the website’s performance, checks for inconsistencies, and helps ensure that all functionalities meet the required standards before deployment.
+                        </p>
+                        <div class="contact-info">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:ignacio.johnrichmond@ue.edu.ph">ignacio.johnrichmond@ue.edu.ph</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

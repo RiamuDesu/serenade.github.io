@@ -53,6 +53,10 @@
                 <br>
                 <div class="song-input-container">
                     <input type="text" placeholder="Paste YouTube link here (e.g., https://youtu.be/...)" id="yt-link"> 
+                    
+                    <div class="sound-btn" onclick="testYTLink()" title="Test Link">
+                        <img src="sound.png" id="sound" alt="Test Music">
+                    </div>
                 </div>
 
                 <div class="public-option">
@@ -74,44 +78,51 @@
         <script src="auth.js"></script>
 
         <script>
-            // Pag-open ng page, i-check kung naka-login
             window.onload = function() {
                 onPageLoad(); 
             };
 
-            // --- YOUTUBE LINK EXTRACTOR ---
+            // YouTube Extractor
             function getYTVideoId(url) {
                 const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
                 const match = url.match(regExp);
                 return (match && match[2].length === 11) ? match[2] : null;
             }
 
-            // --- PAG PININDOT ANG 'SEAL AND SEND' ---
+            // Function pag pinindot yung pink sound icon
+            function testYTLink() {
+                const ytInput = document.getElementById('yt-link').value;
+                const videoId = getYTVideoId(ytInput);
+
+                if (videoId) {
+                    window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+                } else {
+                    alert("Paste ka muna ng valid na YouTube link sa box para ma-test natin, beh!");
+                }
+            }
+
+            // Function pag pinindot ang 'SEAL AND SEND'
             document.getElementById('love-letter-form').addEventListener('submit', function(e) {
-                e.preventDefault(); // Pigilan muna mag-refresh ang page
+                e.preventDefault(); 
                 
                 const ytInput = document.getElementById('yt-link').value;
                 const videoId = getYTVideoId(ytInput);
 
-                // Pag may tinype pero hindi saktong YouTube link
                 if (ytInput && !videoId) {
                     alert("Beh, parang hindi valid yung YouTube link mo. Paki-check nga ulit!");
                     return;
                 }
 
-                // I-save ang YouTube ID sa browser memory kung meron
                 if (videoId) {
                     localStorage.setItem('serenade_yt_id', videoId);
                 } else {
-                    localStorage.removeItem('serenade_yt_id'); // Burahin ang luma kung blanko
+                    localStorage.removeItem('serenade_yt_id'); 
                 }
 
-                // Kunin yung message at isave rin (para makita sa preview page)
                 localStorage.setItem('serenade_message', document.getElementById('message-text').value);
                 localStorage.setItem('serenade_target', document.getElementById('target-user').value);
                 
                 alert("Letter Sealed! Sent with love.");
-                // Palitan mo 'to kung saang page mo gusto i-redirect pagtapos (e.g. preview.html)
                 window.location.href = "preview.html"; 
             });
         </script>

@@ -109,6 +109,27 @@ textarea, input[type="text"] {
     font-family: inherit;
 }
 
+/* --- Sound Input & Button --- */
+.song-input-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#yt-link { width: 65%; margin: 0; }
+
+.sound-btn {
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.sound-btn:hover { transform: scale(1.1); }
+.sound-btn:active { transform: scale(0.9); }
+
+#sound { width: 45px; height: auto; }
+
 /* --- Public Serenade Option --- */
 .public-option {
     display: flex;

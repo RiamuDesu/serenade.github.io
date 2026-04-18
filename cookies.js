@@ -30,13 +30,11 @@ function onPageLoad() {
     console.log("onLoad Executed");
     let user = getUser();
     if (user) {
-        // Kung may 'welcometext' na ID sa page, papalitan niya
         let welcomeEl = document.getElementById("welcometext");
         if (welcomeEl) {
             welcomeEl.innerHTML = "Welcome " + user + "!";
         }
     } else {
-        // Pag walang nahanap na user sa cookies, sipa pabalik sa login
         window.location.assign("login.html");
     }
 }
