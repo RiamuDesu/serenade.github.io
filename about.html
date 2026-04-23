@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>About Us | Serenade Team</title>
     
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" />
@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="../css/style.css" />
     
     <style>
+        /* ---------- GLOBAL RESET - NO OVERFLOW ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
             --body-gradient: linear-gradient(#ff82ad, #ffffff);
             --header-pink: #ff3d81;
@@ -29,6 +36,8 @@
             color: #333;
             margin: 0;
             padding: 0;
+            overflow-x: hidden; /* CRITICAL: prevents horizontal scroll */
+            width: 100%;
         }
 
         h2, h3 {
@@ -36,16 +45,19 @@
             font-weight: 800;
         }
 
-        /* --- NEW NAV BAR CSS --- */
+        /* --- CENTERED NAV BAR (no overflow) --- */
         header {
             background: #ff3d81;
             display: flex;
             align-items: center;
-            padding: 10px 20px;
+            justify-content: space-between;
+            padding: 10px 5%;
             color: white;
             width: 100%;
-            position: relative; /* Para sa absolutely positioned title */
+            position: relative;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         #menu-toggle {
@@ -74,7 +86,7 @@
             flex-direction: column;
             padding-top: 60px;
             transition: 0.4s;
-            z-index: 999; /* Ensures it overlaps the page content */
+            z-index: 999;
             text-align: left;
         }
 
@@ -104,6 +116,7 @@
             left: 0;
         }
 
+        /* TITLE - PERFECTLY CENTERED */
         .title {
             font-family: "Playfair Display", serif;
             font-size: 28px;
@@ -111,7 +124,7 @@
             letter-spacing: 10px;
             position: absolute;
             left: 50%;
-            transform: translateX(-50%); /* Centered nicely */
+            transform: translateX(-50%);
             color: white;
             white-space: nowrap;
         }
@@ -119,7 +132,7 @@
         .header-actions {
             display: flex;
             gap: 10px;
-            margin-left: auto; /* Pushes the buttons to the right edge */
+            margin-left: auto;
             align-items: center;
         }
 
@@ -144,7 +157,6 @@
             cursor: pointer;
         }
 
-        /* Responsive title for smaller screens */
         @media (max-width: 600px) {
             .title {
                 font-size: 18px;
@@ -154,12 +166,16 @@
                 padding: 6px 10px;
                 font-size: 14px;
             }
+            header {
+                padding: 10px 4%;
+            }
         }
 
-        /* --- ORG CHART SECTION --- */
+        /* --- ORG CHART SECTION - CENTERED --- */
         .org-chart-section {
-            padding: 4rem 10%;
+            padding: 4rem 5%;
             text-align: center;
+            width: 100%;
         }
 
         .org-chart-section h2 {
@@ -177,17 +193,20 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             max-width: 950px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .org-chart-container img {
             width: 100%;
             height: auto;
             border-radius: 10px;
+            display: block;
         }
 
-        /* --- TEAM SECTION (PURE CSS GRID: 3x2) --- */
+        /* --- TEAM SECTION - FULLY CENTERED --- */
         .team-section {
-            padding: 2rem 10% 6rem;
+            padding: 2rem 5% 6rem;
+            width: 100%;
         }
 
         .about-header {
@@ -206,29 +225,32 @@
             font-size: 1.1rem;
         }
 
-        /* 3x2 GRID */
+        /* 3x2 GRID - CENTERED & RESPONSIVE (NO OVERFLOW) */
         .team-grid-3x2 {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 2rem; 
-            max-width: 1200px; 
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
         }
 
         @media (max-width: 991px) {
             .team-grid-3x2 {
                 grid-template-columns: repeat(2, 1fr);
+                max-width: 800px;
             }
         }
         @media (max-width: 768px) {
             .team-grid-3x2 {
                 grid-template-columns: 1fr;
+                max-width: 450px;
             }
         }
 
         /* TEAM CARD STYLING */
         .team-card {
-            position: relative; 
+            position: relative;
             text-align: center;
             background: #ffffff;
             border: 1px solid rgba(255, 130, 173, 0.2);
@@ -238,8 +260,9 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; 
-            cursor: pointer; 
+            justify-content: flex-start;
+            cursor: pointer;
+            width: 100%;
         }
 
         .team-card:hover {
@@ -254,7 +277,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1; 
+            z-index: 1;
+            border-radius: 20px;
         }
 
         .team-card img.member-pic {
@@ -264,7 +288,7 @@
             object-fit: cover;
             border-radius: 50%;
             margin: 0 auto 1.2rem auto;
-            background-color: var(--soft-pink-bg); 
+            background-color: var(--soft-pink-bg);
             display: block;
             border: 5px solid var(--soft-pink-bg);
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -296,7 +320,7 @@
             line-height: 1.6;
             text-align: justify;
             margin-bottom: 1.5rem;
-            flex-grow: 1; 
+            flex-grow: 1;
         }
 
         .contact-info {
@@ -306,20 +330,30 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            position: relative; 
-            z-index: 2; 
+            position: relative;
+            z-index: 2;
+            flex-wrap: wrap;
         }
 
-        .contact-info i { color: var(--main-text-pink); }
+        .contact-info i {
+            color: var(--main-text-pink);
+        }
         .contact-info a {
             color: #555;
             font-size: 0.8rem;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.2s;
+            word-break: break-all;
         }
         .contact-info:hover a, .contact-info:hover i {
             color: var(--header-pink);
+        }
+
+        /* Ensure no overflow on any container */
+        .container {
+            max-width: 100%;
+            overflow-x: hidden;
         }
     </style>
 </head>
@@ -339,7 +373,7 @@
             <a href="create.html">Create Letter</a>
             <a href="preview.html">Mail</a>
             <a href="search.html">Search</a>
-            <a href="about.html">About Us</a> 
+            <a href="about.html">About Us</a>
         </div>
         
         <div class="title">
@@ -382,7 +416,7 @@
                         <h3>Rivera, Eira Ayessa T.</h3>
                         <div class="role">Project Manager</div>
                         <p class="member-desc">
-                            As the Project Manager, she oversees the overall development of the Serenade platform from planning to implementation. She ensures that all tasks are aligned with the project objectives and manages the team’s workflow and progress. She is also responsible for coordinating with team members, monitoring deadlines, and ensuring that the final output meets the desired quality and concept of the system.
+                            As the Project Manager, she oversees the overall development of the Serenade platform from planning to implementation. She ensures that all tasks are aligned with the project objectives and manages the team's workflow and progress. She is also responsible for coordinating with team members, monitoring deadlines, and ensuring that the final output meets the desired quality and concept of the system.
                         </p>
                         <div class="contact-info">
                             <i class="fa-solid fa-envelope"></i>
@@ -434,7 +468,7 @@
 
                     <div class="team-card">
                         <a href="link-to-calvin-profile.html" class="card-link-overlay" aria-label="View Profile of Evangelista, Calvin Lee"></a>
-                        <img src="evangalista.jpg" class="member-pic" alt="Evangelista, Calvin Lee D." />
+                        <img src="evangelista.jpg" class="member-pic" alt="Evangelista, Calvin Lee D." />
                         <h3>Evangelista, Calvin Lee D.</h3>
                         <div class="role">Tester</div>
                         <p class="member-desc">
@@ -452,7 +486,7 @@
                         <h3>Ignacio, John Richmond G.</h3>
                         <div class="role">Tester</div>
                         <p class="member-desc">
-                            He assists in conducting system testing and quality assurance. He evaluates the website’s performance, checks for inconsistencies, and helps ensure that all functionalities meet the required standards before deployment.
+                            He assists in conducting system testing and quality assurance. He evaluates the website's performance, checks for inconsistencies, and helps ensure that all functionalities meet the required standards before deployment.
                         </p>
                         <div class="contact-info">
                             <i class="fa-solid fa-envelope"></i>
