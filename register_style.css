@@ -5,30 +5,35 @@
 }
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(
-    270deg,
-    #ff82ad,
-    white);
+    background: linear-gradient(#ff82ad 75%, #ffffff);
     min-height: 100vh;
-  background-size: 800% 800%;
-  animation: gradientWave 10s ease infinite;
+    position: relative;
+    overflow-x: hidden;
 }
-@keyframes gradientWave {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 50% 100%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 50% 0%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle, white 3px, transparent 3px),
+        radial-gradient(circle, white 2px, transparent 2px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    opacity: 0.3; 
+    z-index: -1;
+    animation: sparkleMove 20s linear infinite;
+    pointer-events: none;
+}
+@keyframes sparkleMove {
+    from { background-position: 0 0, 25px 25px; }
+    to { background-position: 50px 50px, 75px 75px; }
 }
 header {
     background: #ff3d81;

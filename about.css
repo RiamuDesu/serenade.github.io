@@ -11,7 +11,7 @@ html,body{
 }
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(#ff82ad, #ffffff);
+    background: linear-gradient(#ff82ad 70%, #ffffff);
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
