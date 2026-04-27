@@ -156,6 +156,7 @@ input,select{
 }
 
 @keyframes heartbeatGlow {
+
   0% {
     transform: scale(1);
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6)) 
