@@ -142,14 +142,12 @@ header{
     flex-direction: column;
     gap: 30px;
     background-image: url(pics/bg.png);
-    background-repeat: repeat-x;
+    background-size: auto;
 }
 .hidden {
     display: none !important;
 }
-.board-nonfilter{
-    background-image: url(pics/bg.png);
-    background-repeat: repeat-x;
+.board-nonfilter{ 
     width: 80%;
     margin: auto;
     margin-bottom: 2%;
