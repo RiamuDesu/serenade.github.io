@@ -131,14 +131,19 @@ header{
     align-items:center;
     justify-content:center;
     flex-direction:column;
+    animation: heartbeatGlow 2s infinite ease-in-out;
+    transition: filter 0.3s ease;
 }
-.main-card img{
+
+.main-card img {
     border-radius: 50px;
 }
-.subtitle{
+
+.subtitle {
     font-size:12px;
     margin-top:5px;
 }
+
 .message-card{
     margin:auto;
     width:360px;
@@ -148,6 +153,8 @@ header{
     color:white;
     font-size:20px;
     line-height:1.6;
+    border-style: solid;
+    border-color: black;
 }
 .continue-btn{
     margin-top:30px;
@@ -158,7 +165,12 @@ header{
     border-radius:25px;
     font-size:20px;
     cursor:pointer;
+    border-style: solid;
+    border-color: black;
 }
+
+
+
 .continue-btn:hover{
     background:#d55375;
 }
@@ -169,3 +181,32 @@ header{
     font-size: 28px;
     text-align: center;
 }
+@keyframes heartbeatGlow {
+
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6)) 
+            drop-shadow(0 0 10px rgba(255, 20, 147, 0.4));
+  }
+  15% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9)) 
+            drop-shadow(0 0 20px rgba(255, 20, 147, 0.8));
+  }
+  30% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6)) 
+            drop-shadow(0 0 10px rgba(255, 20, 147, 0.4));
+  }
+  45% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1)) 
+            drop-shadow(0 0 30px rgba(255, 20, 147, 0.9));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6)) 
+            drop-shadow(0 0 10px rgba(255, 20, 147, 0.4));
+  }
+}
+
