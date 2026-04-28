@@ -135,6 +135,11 @@ header{
     letter-spacing: 4px;
     color: white;
     font-size: 32px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
 }
 .board.filterable{
     width: 80%;
