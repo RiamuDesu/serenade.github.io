@@ -1,4 +1,4 @@
-function filterByCategory() {
+    function filterByCategory() {
     console.log("Attempting to sort...")
     const selection = document.getElementById('categoryFilter').value;
 
