@@ -204,6 +204,7 @@ header{
 .gallery-title {
     text-align: center;
     margin: 40px 0 20px 0;
+    font-size: 25px
 }
 .gallery-title span {
     background: #e5729a;
