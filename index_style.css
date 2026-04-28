@@ -105,6 +105,7 @@ header{
     letter-spacing:10px;
     position: absolute;
     left: 43%;
+    text-align: center;
 }
 .settings button{
     background:#f3d7cf;
@@ -166,4 +167,5 @@ header{
     margin-top: 2%;
     color: white;
     font-size: 28px;
+    text-align: center;
 }
